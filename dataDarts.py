@@ -21,20 +21,11 @@ Main Menu
                 break
                 
             elif option==2:
-                playGame()
+                games.setupGame()
+                break
                 
             elif option==0:
                 sys.exit(1)
-                
-def playGame():
-        
-    game = raw_input("What game would you like to play? (Options: 501, Cricket): ")
-    while game != "501" and game != "Cricket":
-        game = raw_input("Input error.  (Options: 501, Cricket): ")
-
-    if game == "501":
-        games.play501()
-
 
 
 print "Welcome to dataDarts! \n"

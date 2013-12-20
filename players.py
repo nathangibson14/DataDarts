@@ -104,3 +104,18 @@ def removePlayer():
         
         print "Player " + name + " not in database."
         
+def playerExists(name):
+    name = name.strip()
+    con = lite.connect('players.db')
+    with con:
+        c = con.cursor()
+        c.execute("SELECT * FROM Players WHERE Name == '{0}'".format(name))
+        data = c.fetchone()
+        
+        if data==None:
+            return False
+            
+        else:
+            return True
+        
+        
